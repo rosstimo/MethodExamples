@@ -1,8 +1,47 @@
 ﻿Module MethodExamples
 
-    Dim junk As Boolean
-
     Sub Main()
+        Dim charge As Integer = 5
+        Dim resetTotal As Boolean = False
+
+        For i = 1 To 10
+            Console.WriteLine(RunningTotal(charge, False))
+        Next
+
+        Console.WriteLine(RunningTotal())
+
+        ' Console.Read()
+        RunningTotal(, True)
+        charge = 4
+
+        For i = 1 To 10
+            Console.WriteLine(RunningTotal(charge))
+        Next
+
+        Console.WriteLine(RunningTotal())
+
+        Console.ReadLine()
+
+    End Sub
+
+
+    Function RunningTotal(ByVal Optional currentCharge As Integer = 0, ByVal Optional clear As Boolean = False) As Integer
+        Static _runningTotal As Integer
+
+        If clear Then
+            _runningTotal = 0
+        Else
+            _runningTotal = _runningTotal + currentCharge
+        End If
+
+        Return _runningTotal
+    End Function
+
+
+
+
+
+    Sub display()
         'Dim firstNumber As Integer = 7
         'Dim secondNumber As Integer = 6
 
@@ -33,9 +72,6 @@
         Console.Read()
     End Sub
 
-
-
-
     Function Sum(ByVal numOne As Integer, ByVal numTwo As Integer) As Integer
         Console.WriteLine($"in sum secondNumber is {numTwo}")
         Return numOne + numTwo
@@ -45,15 +81,9 @@
         Dim _randomNumber As Integer
         Dim junk As String
         'TODO figure out how to get a random number...
-
         _randomNumber = CInt(Rnd() * 1000)
-
-
         junk = CStr(_randomNumber).PadLeft(4) & " |"
-
         Console.Write(junk)
-
-
         Return _RandomNumber
     End Function
 
