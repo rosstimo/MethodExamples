@@ -1,26 +1,21 @@
 ﻿Module MethodExamples
 
     Sub Main()
-        Dim charge As Integer = 5
-        Dim resetTotal As Boolean = False
+        Dim fruitBasketOne As Integer = 5
+        Dim fruitBasketTwo As Integer = 5
 
-        For i = 1 To 10
-            Console.WriteLine(RunningTotal(charge, False))
-        Next
-
-        Console.WriteLine(RunningTotal())
-
-        ' Console.Read()
-        RunningTotal(, True)
-        charge = 4
-
-        For i = 1 To 10
-            Console.WriteLine(RunningTotal(charge))
-        Next
-
-        Console.WriteLine(RunningTotal())
+        Console.WriteLine($"There are {fruitBasketOne} apples and {fruitBasketTwo} bananas before CountFruit Sub")
+        CountFruit(fruitBasketOne, fruitBasketTwo)
+        Console.WriteLine($"There are {fruitBasketOne} apples and {fruitBasketTwo} bananas after CountFruit Sub")
 
         Console.ReadLine()
+    End Sub
+
+
+    Sub CountFruit(ByVal apples As Integer, ByRef bananas As Integer)
+        apples += 1
+        bananas += 1
+        Console.WriteLine($"There are {apples} apples and {bananas} bananas in the CountFruit Sub")
 
     End Sub
 
@@ -36,10 +31,6 @@
 
         Return _runningTotal
     End Function
-
-
-
-
 
     Sub display()
         'Dim firstNumber As Integer = 7
